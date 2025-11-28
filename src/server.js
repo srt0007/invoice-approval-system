@@ -96,7 +96,7 @@ app.use((err, req, res, next) => {
 // Database connection and server startup
 sequelize.authenticate()
   .then(() => {
-    logger.info('MySQL connection established successfully');
+    logger.info('PostgreSQL connection established successfully');
 
     // Sync database models (create tables if they don't exist)
     return sequelize.sync({ alter: config.nodeEnv === 'development' });
@@ -104,10 +104,11 @@ sequelize.authenticate()
   .then(() => {
     logger.info('Database synchronized');
 
-    // Start server
-    app.listen(config.port, () => {
-      logger.info(`Server running on port ${config.port} in ${config.nodeEnv} mode`);
-      logger.info(`Dashboard available at http://localhost:${config.port}`);
+    // Start server - bind to 0.0.0.0 for cloud deployments
+    const HOST = process.env.HOST || '0.0.0.0';
+    app.listen(config.port, HOST, () => {
+      logger.info(`Server running on ${HOST}:${config.port} in ${config.nodeEnv} mode`);
+      logger.info(`Health check: http://localhost:${config.port}/api/health`);
     });
   })
   .catch(err => {
