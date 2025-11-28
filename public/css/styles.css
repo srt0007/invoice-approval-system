@@ -1,0 +1,167 @@
+body {
+  background-color: #f8f9fa;
+}
+
+.navbar-brand i {
+  margin-right: 8px;
+}
+
+.card {
+  box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+  border: none;
+  margin-bottom: 1rem;
+}
+
+.upload-area {
+  border: 2px dashed #dee2e6;
+  border-radius: 8px;
+  padding: 40px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  background-color: #fff;
+}
+
+.upload-area:hover,
+.upload-area.dragover {
+  border-color: #0d6efd;
+  background-color: #f0f7ff;
+}
+
+.upload-area i {
+  color: #6c757d;
+}
+
+.file-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+  background-color: #f8f9fa;
+  border-radius: 4px;
+  margin-bottom: 8px;
+}
+
+.file-item .file-name {
+  display: flex;
+  align-items: center;
+}
+
+.file-item .file-name i {
+  margin-right: 8px;
+  color: #6c757d;
+}
+
+.file-item .remove-file {
+  cursor: pointer;
+  color: #dc3545;
+}
+
+.status-badge {
+  font-size: 0.75rem;
+  padding: 0.25rem 0.5rem;
+}
+
+.confidence-bar {
+  height: 6px;
+  border-radius: 3px;
+  background-color: #e9ecef;
+  overflow: hidden;
+}
+
+.confidence-fill {
+  height: 100%;
+  border-radius: 3px;
+  transition: width 0.3s ease;
+}
+
+.confidence-high {
+  background-color: #198754;
+}
+
+.confidence-medium {
+  background-color: #ffc107;
+}
+
+.confidence-low {
+  background-color: #dc3545;
+}
+
+.table th {
+  border-top: none;
+  font-weight: 600;
+  font-size: 0.875rem;
+  color: #495057;
+}
+
+.table td {
+  vertical-align: middle;
+}
+
+.action-btn {
+  padding: 0.25rem 0.5rem;
+  font-size: 0.75rem;
+}
+
+#invoiceDetails .form-label {
+  font-weight: 600;
+  font-size: 0.875rem;
+  color: #495057;
+}
+
+#invoiceDetails .form-control {
+  font-size: 0.875rem;
+}
+
+.line-items-table {
+  font-size: 0.875rem;
+}
+
+.line-items-table th {
+  font-size: 0.75rem;
+}
+
+.validation-errors {
+  background-color: #f8d7da;
+  border: 1px solid #f5c2c7;
+  border-radius: 4px;
+  padding: 10px;
+  margin-bottom: 1rem;
+}
+
+.validation-warnings {
+  background-color: #fff3cd;
+  border: 1px solid #ffecb5;
+  border-radius: 4px;
+  padding: 10px;
+  margin-bottom: 1rem;
+}
+
+.validation-errors ul,
+.validation-warnings ul {
+  margin-bottom: 0;
+  padding-left: 20px;
+}
+
+.processing-time {
+  font-size: 0.75rem;
+  color: #6c757d;
+}
+
+.nav-tabs .nav-link {
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .card-body {
+    padding: 1rem;
+  }
+
+  .upload-area {
+    padding: 20px;
+  }
+
+  .table {
+    font-size: 0.875rem;
+  }
+}

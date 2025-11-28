@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Test Page</title>
+  <style>
+    .nav-link { padding: 10px; margin: 5px; cursor: pointer; background: #ccc; display: inline-block; }
+    .nav-link.active { background: #007bff; color: white; }
+    .form-container { margin-top: 20px; padding: 20px; border: 1px solid #ddd; }
+  </style>
+</head>
+<body>
+  <h1>Test Auth Tabs</h1>
+
+  <div id="authTabs">
+    <a class="nav-link active" href="#" onclick="showAuthTab('login', event); return false;">Login</a>
+    <a class="nav-link" href="#" onclick="showAuthTab('register', event); return false;">Register</a>
+  </div>
+
+  <div id="loginForm" class="form-container">
+    <h2>Login Form</h2>
+    <p>This is the login form</p>
+  </div>
+
+  <div id="registerForm" class="form-container" style="display:none;">
+    <h2>Register Form</h2>
+    <p>This is the register form</p>
+  </div>
+
+  <script>
+    function showAuthTab(tab, event) {
+      console.log('showAuthTab called with:', tab);
+
+      // Remove active class from all tabs
+      document.querySelectorAll('#authTabs .nav-link').forEach(el => {
+        el.classList.remove('active');
+      });
+
+      // Add active class to clicked tab
+      if (event && event.target) {
+        event.target.classList.add('active');
+      }
+
+      // Show/hide forms
+      if (tab === 'login') {
+        document.getElementById('loginForm').style.display = 'block';
+        document.getElementById('registerForm').style.display = 'none';
+      } else {
+        document.getElementById('loginForm').style.display = 'none';
+        document.getElementById('registerForm').style.display = 'block';
+      }
+    }
+  </script>
+</body>
+</html>
