@@ -13,13 +13,14 @@ module.exports = {
     temperature: 0.1, // Low temperature for consistent extraction
   },
 
-  // MySQL Database
+  // PostgreSQL Database
   database: {
     host: process.env.DB_HOST || 'localhost',
-    port: parseInt(process.env.DB_PORT) || 3306,
+    port: parseInt(process.env.DB_PORT) || 5432,
     name: process.env.DB_NAME || 'invoice_processing',
-    user: process.env.DB_USER || 'root',
+    user: process.env.DB_USER || 'postgres',
     password: process.env.DB_PASSWORD || '',
+    url: process.env.DATABASE_URL, // For Railway/production
   },
 
   // JWT
